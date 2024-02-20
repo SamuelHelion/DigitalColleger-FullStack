@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="ExibirMensagem()">Funcao Mensagem</button>
+    <button onmouseover="ExibirMensagem()">On Mouse Over</button>
+    <button ondblclick="ExibirMensagem()">On DB Click</button>
+
+    <form action="">
+        <input type="text" onchange="campoNome()">
+    </form>
+
+    <script>
+
+        function campoNome() {
+            alert('Campo Nome')
+        }
+
+        //FUNCOES
+        // FUNCAO SEM PARAMETRO
+
+        function NomeDaFuncao() {
+            // escopo da funcao
+        }
+
+        function ExibirMensagem() {
+            alert("Olá, eu sou uma função")
+        }
+
+        //FUNCÕES COM PARAMENTROS
+
+        function CalculoDaEtapaFinal(etapa_1, etapa_2, etapa_3) {
+            const resultado = etapa_1 + etapa_2 + etapa_3 / 3;
+            console.log("Resultado da soma: ", resultado)
+
+        }
+
+        CalculoDaEtapaFinal(7, 9, 4);
+        
+    </script>
+</body>
+</html>

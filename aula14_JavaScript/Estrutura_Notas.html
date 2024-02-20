@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //FUNCÕES COM PARAMENTROS
+        
+        // const av1 = parseFloat(prompt("Digite a nota av1"))
+        // const av2 = parseFloat("Digite a nota av2")
+        // const av3 = promptFloat("Digite a nota av3")
+
+        
+        const Ponto_Extra = 1;
+        
+
+        function Etapa_1(av1, av2, av3, av4) {
+            const resultado_1 = (av1 + av2*2 + av3 + av4*2) / 5;
+            console.log("Resultado_etapa_1: ", resultado_1)
+            return Etapa_1;
+        }
+
+        Etapa_1(4, 2, 7, 9);
+
+        function Etapa_2(av1, av2, av3, av4) {
+            const resultado_2 = (av1 + av2*2 + av3 + av4*2) / 5;
+            console.log("Resultado_etapa_2: ", resultado_2)
+            return Etapa_2;
+        }
+
+        Etapa_2(7, 9, 4, 6);
+
+        function Etapa_3(av1, av2, av3, av4) {
+            const resultado_3 = (av1 + av2*2 + av3 + av4*2) / 5;
+            console.log("Resultado_etapa_3: ", resultado_3)
+            return Etapa_3;
+        }
+
+        Etapa_3(10, 9, 3, 6);
+
+        function CalculoDaEtapaFinal(Etapa_1, Etapa_2, Etapa_3) {
+            const resultadoFinal = (Etapa_1 + Etapa_2 + Etapa_3) / 3;
+            console.log("ResultadoFinal: ", resultadoFinal)
+            return CalculoDaEtapaFinal;
+
+            if(resultadoFinal >= 6){
+                alert(resultadoFinal + Ponto_Extra);
+            }else{
+                alert("Você  não alcançou a média para ganhar o ponto");
+            }
+            
+            
+               
+        }
+
+        CalculoDaEtapaFinal(Etapa_1, Etapa_2, Etapa_3);
+
+        
+    </script>
+</body>
+</html>

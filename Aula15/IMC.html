@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+     const peso = parseFloat(prompt("Informe o seu peso"));
+     const altura = parseFloat(prompt("Informe o seu altura"));
+    
+    //FUNÇÃO DE STRING 
+    // peso = peso.replace(',','.');
+    // altura = altura.replace(',','.');
+
+    imc = peso / (altura * altura);
+    
+
+     if(imc < 18.5 && imc <= 24.9){
+        alert("magro ou baixo");
+     }
+     if(imc >= 25.0 && imc <= 29.9){
+        alert("Sobrepeso ou pré obeso");
+    }
+     if(imc >= 30.0){
+        alert("Obesidade grau 1");
+    }
+    
+    alert(imc)
+
+    </script>
+    
+</body>
+</html>

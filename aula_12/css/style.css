@@ -1,0 +1,27 @@
+header {
+    background-color: #222;
+    color: white;
+    height: 600px;
+    background-image: url('../img/img1.jpg');
+    background-size: cover;
+    background-position: 100px;
+    color: white 100px;
+
+}
+
+.content-header{
+    height: 550px;
+} 
+
+h1 {
+    display:flex ;
+    justify-content:center ;
+}
+
+ul, li {
+    list-style: none;
+    list-style-position: inside;
+}
+ ul.nav li {
+    padding: 10px
+}
