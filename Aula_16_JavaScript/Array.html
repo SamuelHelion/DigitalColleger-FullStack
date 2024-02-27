@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <script>
+            //ESTRUTURA DE REPETIÇÃO
+            //FOR
+
+            // let contador = 0;
+
+            // for(contador; contador < 3; contador++) {
+            //     console.log("Executou", contador)
+            //     alert("Olá")
+            // }
+
+            const listnome = ["Luckas",
+                            "Matheus",
+                            "Thiago",
+                            "Daniel",
+                            "Luiza",
+                            "Crislene",
+                            "Lara",
+                            "Fernanda",
+                            "Cris",
+                            "Fatima"];
+
+                for(let i = 0; i < 10; i++ ) {
+                    document.write(listnome[i]);
+                    document.write("<br>");
+
+
+                    //Escreva um for que liste os numeros de 0 a 1000. x++
+
+                    for(let index = 0; index <= 1000; index++ ) {
+                        if(index % 1){
+                        alert("Impar");
+                        }
+                        document.write(index);
+                        document.write("<br>");  
+                    }
+                    
+                    //Escreva um for que liste os numeros de 1000 a 0. x--
+
+                    for(let index = 1000; index >= 0; index-- ) {
+                        if(index % 0){
+                            alert("Par");
+                        }
+                        document.write(index);
+                        document.write("<br>");
+                }
+    </script>
+    </body>
+</html>
