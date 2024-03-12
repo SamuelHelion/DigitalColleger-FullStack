@@ -39,4 +39,4 @@ const carro_3 = {
     ]
 };
 
-console.log(carro_1)
+console.log(carro_1);

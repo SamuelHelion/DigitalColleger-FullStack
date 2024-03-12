@@ -9,13 +9,13 @@ const carros = [
         modelo: "Pulse",
         marca: "Fiat",
         cor: "Cinza",
-        valor: 12000.00
+        valor: 120000.00
     },
     {
         modelo: "Civic",
         marca: "Honda",
         cor: "Preto",
-        valor: 150000.00
+        valor: 1500000.00
     }
 ];
 
@@ -77,9 +77,9 @@ mapeamento(carros, (item, indice) => {
 // FILTER
 
 const caros = carros.filter((carro, indice) => {
-    if(carro.valor >= 100) {
+    if(carro.valor >= 100000.00) {
         return carro;
     }
 });
 
-const caros2 = carros.filter((carro, indice) => carro.valor >= 100);
+const caros2 = carros.filter((carro, indice) => carro.valor >= 100000.00);

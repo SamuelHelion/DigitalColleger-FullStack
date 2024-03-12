@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 80%;
+            padding: 10px;
+            margin: 0 auto;
+            border: 1px solid #CCC;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div id="container">
+   
+
+        <table class="table-hover table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>CPF</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="pessoas">
+                
+            </tbody>
+        </table>    
+    </div>
+
+    <script>
+        document.write("Olá Javascripto");
+        document.write("<h1>Ola</h1>");
+
+        console.log(document)
+        const container = document.getElementById('container');
+        // container.innerHTML = "Conteudo dentro do Container"
+
+        container.style.background = 'pink';
+        container.style.color = "red";
+        container.style.borderRadius = "10px"
+
+        let valor = 10;
+        // const conteudo = '<ul>' + valor + '</ul>'
+        const conteudo = `<ul>
+            <li>${valor++}</li>
+            <li>${valor++}</li>
+            <li>${valor++}</li>
+            <li>${valor++}</li>
+        </ul>`;
+
+        // container.innerHTML = conteudo;
+
+
+
+        // CRIE UM ARRAY COM 3 POSICOES, CADA POSICAO DEVE
+        // CONTER UM OBJETO PESSOA COM NOME, IDADE E CPF.
+
+        const pessoas = [
+            { nome: "Maria", idade: 30, cpf: "025.859.859-85" },
+            { nome: "Jose", idade: 32, cpf: "078.859.859-85" },
+            { nome: "Joana", idade: 42, cpf: "145.859.859-85" },
+        ];
+        
+        let conteudoTabela = '';
+        pessoas.map((pessoa, posicao) => {
+            let linha = `
+                <tr>
+                    <td>${posicao}</td>
+                    <td>${pessoa.nome}</td>
+                    <td>${pessoa.idade}</td>
+                    <td>${pessoa.cpf}</td>
+                    <td>
+                        <button class="btn btn-primary">Editar</button>
+                        <button class="btn btn-danger">Excluir</button>
+                    </td>
+                </tr>
+            `;
+            conteudoTabela = conteudoTabela + linha;
+        });
+
+        const tabelaPessoas = document.getElementById('pessoas');
+        console.log(tabelaPessoas)
+        tabelaPessoas.innerHTML = conteudoTabela;
+        
+
+    </script>
+</body>
+</html>
