@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="login">
+    <br>
+    <input type="password" id="senha">
+    <br>
+    <button style="color: red" id="btn">Acessar</button>
+    <script>
+        // DOM - document object manipulation
+        console.log(window.innerWidth);
+        console.log(window.document)
+        const btn = document.getElementById('btn');
+        btn.style.backgroundColor = "blue";
+        btn.style.color = "white";
+        btn.addEventListener('click', () => {
+            const login = document.getElementById('login');
+            const senha = document.getElementById('senha');
+            console.log(login.value);
+            console.log(senha.value);
+            login.value = '';
+            senha.value = '';
+        });
+        console.log(btn)
+    </script>
+</body>
+</html>	
