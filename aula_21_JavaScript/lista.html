@@ -47,7 +47,6 @@
             lista = JSON.parse(listaString);
         }
 
-
         function listarDados() {
             let conteudo = '';
             lista.map((item, indice) => {
@@ -59,7 +58,7 @@
                         <td>${item.prioridade}</td>
                         <td>${item.data}</td>
                         <td>
-                            <button class="btn btn-primary btn-sm">
+                            <button class="btn btn-primary btn-sm" onclick="editarItem(${indice})">
                                 Editar
                             </button>
                             <button class="btn btn-danger btn-sm" onclick="excluirItem(${indice})">
@@ -74,6 +73,11 @@
         }
         
         listarDados();
+
+        function editarItem(posicao) {
+            localStorage.setItem('id_edicao', posicao);
+            location.href = 'formulario.html';
+        }
 
         function excluirItem(posicao) {
             const novaLista = lista.filter((item, indice) => {

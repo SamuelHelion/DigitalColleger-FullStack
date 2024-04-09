@@ -19,6 +19,7 @@
         <br>
         <input type="date" id="data">
         <br>
+        <a href="lista.html">Cancelar</a>
         <button type="button" onclick="adicionarTarefa()">Salvar Tarefa</button>
     </form>
 
@@ -39,16 +40,31 @@
             const nome = campoNome.value;
             const prioridade = campoPrioridade.value;
             const data = campoData.value;
+
             const tarefa = {
                 nome: nome,
                 prioridade: prioridade,
                 data: data,
             };
-            lista.push(tarefa);
-            console.log(lista);
-            
+
+            const posicao = localStorage.getItem('id_edicao');
+            if(posicao === null) {
+                lista.push(tarefa);
+            } else {
+               lista = lista.map((item, indice) => {
+                    if(indice == posicao) {
+                        return tarefa;
+                    }
+                    return item;
+               })
+               localStorage.removeItem('id_edicao');
+            }
+          
+
             const listaString = JSON.stringify(lista);
             localStorage.setItem('lista', listaString);
+
+            location.href = 'lista.html';
         }
 
         // localStorage.setItem('meu_nome', 'Márcio Ferreira');
@@ -56,6 +72,28 @@
         // alert(nome)
         // localStorage.removeItem('meu_nome')
         
+        function carregarDadosEdicao() {
+            const posicao = localStorage.getItem('id_edicao');
+            if(posicao !== null) {
+                const dados = lista.filter((item, indice) => {
+                    if(indice == posicao) {
+                        return item;
+                    }
+                })
+                const objeto = dados[0];
+                
+                const campoNome = document.getElementById('nome');
+                const campoPrioridade = document.getElementById('prioridade');
+                const campoData = document.getElementById('data');
+
+                campoNome.value = objeto.nome;
+                campoPrioridade.value = objeto.prioridade;
+                campoData.value = objeto.data;
+
+            }
+        }
+
+        carregarDadosEdicao();
 
     </script>
 </body>
